@@ -38,8 +38,12 @@ class Repository:
                 if resp.status_code!=200:
                     print("An error occured whn trying to reach cowin servers, don't worry, trying again...")
                     continue
-
-
-
-
                 response=resp.json()
+                centers=response["centers"]
+
+
+                for center in centers:
+                    for session in center["sessions"]:
+                        if ageGroup==1:
+                            session["available_capacity_dose1"]>0:
+                            print()
